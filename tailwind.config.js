@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: '16px',
+      padding: '0px',
       screens: {
         'lg': '1366px',
       },
@@ -16,6 +16,7 @@ module.exports = {
       },
       colors: {
         deafult: '#212529',    
+         customMix: 'rgba(33, 37, 41, 0.05)',
         customGrayMix: 'rgba(33, 37, 41, 0.75)',
         darkTransparent: 'rgba(33, 37, 41, 0.06)',
         greenTransparent: 'rgba(52, 191, 73, 0.08)',
