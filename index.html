@@ -13,34 +13,62 @@
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <!-- swiper -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 </head>
 
 <body>
     <!-- navbar -->
-    <nav class="fixed top-0 px-3 left-0 w-full right-0 bg-white  mx-auto py-5 z-50">
-        <div class="container max-w-[1140px] mx-auto">
-            <div class="flex items-center justify-between">
-                <!-- logo -->
-                <h1 class="text-[30px] text-heading font-light">Active.</h1>
-                <ul class="hidden lg:flex items-center justify-center font-normal text-default font-Lato">
-                    <li><a class="py-[16px] px-[15px] text-base text-primary" href="">Home</a></li>
-                    <li><a class="py-[16px] px-[15px] text-base" href="">About</a></li>
-                    <li><a class="py-[16px] px-[15px] text-base" href="">Services</a></li>
-                    <li><a class="py-[16px] px-[15px] text-base" href="">Portfolio</a></li>
-                    <li><a class="py-[16px] px-[15px] text-base" href="">Team</a></li>
-                    <li><a class="py-[16px] px-[15px] text-base" href="">Blog</a></li>
-                    <li><a class="py-[16px] px-[15px] text-base" href="">Dropdown</a></li>
-                    <li><a class="py-[16px] px-[15px] text-base" href="">Contact</a></li>
-                </ul>
+    <nav class="sticky max-w-[1140px] container mx-auto top-0 left-0 w-full bg-white px-3 py-5 z-50">
+        <div class="container max-w-[1140px] mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <h1 class="text-[30px] text-heading font-light">Active.</h1>
+
+            <!-- Hamburger Button -->
+            <button id="navbar-toggle" class="block lg:hidden text-default text-2xl focus:outline-none">
+                ☰
+            </button>
+
+            <!-- Desktop Navbar -->
+            <ul class="hidden lg:flex items-center justify-center font-normal text-default font-Lato">
+                <li><a class="py-[16px] px-[15px] text-base text-primary" href="">Home</a></li>
+                <li><a class="py-[16px] px-[15px] text-base" href="">About</a></li>
+                <li><a class="py-[16px] px-[15px] text-base" href="">Services</a></li>
+                <li><a class="py-[16px] px-[15px] text-base" href="">Portfolio</a></li>
+                <li><a class="py-[16px] px-[15px] text-base" href="">Team</a></li>
+                <li><a class="py-[16px] px-[15px] text-base" href="">Blog</a></li>
+                <li><a class="py-[16px] px-[15px] text-base" href="">Dropdown</a></li>
+                <li><a class="py-[16px] px-[15px] text-base" href="">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Modal Navbar -->
+            <div id="mobile-nav" class="fixed inset-0 bg-[#212529cc] flex hidden items-center justify-center z-50">
+                <div class="bg-white w-[90%] max-w-[400px] p-5 rounded-lg">
+                    <button id="close-navbar" class="text-primary text-xl mb-5 focus:outline-none">
+                        ✕
+                    </button>
+                    <ul class="flex flex-col space-y-4 font-normal text-default font-Lato">
+                        <li><a class="text-base text-primary" href="">Home</a></li>
+                        <li><a class="text-base" href="">About</a></li>
+                        <li><a class="text-base" href="">Services</a></li>
+                        <li><a class="text-base" href="">Portfolio</a></li>
+                        <li><a class="text-base" href="">Team</a></li>
+                        <li><a class="text-base" href="">Blog</a></li>
+                        <li><a class="text-base" href="">Dropdown</a></li>
+                        <li><a class="text-base" href="">Contact</a></li>
+                    </ul>
+                </div>
             </div>
+
+
         </div>
     </nav>
 
 
+
+
     <main class="font-roboto bg-white">
         <!-- hero section -->
-        <section class="bg-white mt-[85px]">
+        <section class="bg-white ">
             <div class="px-3 container max-w-[1140px]  mx-auto py-[60px]">
                 <div class="hero__section flex flex-col-reverse lg:flex-row  justify-between items-center">
                     <!-- left side -->
@@ -310,7 +338,7 @@
         <section class="bg-surface py-[60px]">
             <div class="container mx-auto max-w-[1140px] flex flex-col lg:flex-row gap-8">
                 <!-- Left Section -->
-                <div class="slider__link lg:w-1/3">
+                <div class="slider__link overflow-x-hidden lg:w-1/3">
                     <!-- Link 1 -->
                     <div id="link-1" class="flex p-5 mb-[10px] gap-5 bg-white rounded-lg">
                         <div class="h-10 w-14 bg-primary flex items-center justify-center rounded-md">
@@ -370,7 +398,7 @@
                             <!-- Slide 1 -->
                             <div class="swiper-slide">
                                 <img src="img/slide1.jpg" alt="Slide 1" class="w-full rounded-lg object-cover" />
-                                <div class="p-6">
+                                <div id="textSection" class="p-6 hidden">
                                     <h1 class="mb-5 font-medium text-xl text-heading">Modern and clean design</h1>
                                     <div class="flex gap-5">
                                         <div class="w-2/3">
@@ -417,6 +445,7 @@
                 </div>
             </div>
         </section>
+
 
         <!-- our services -->
         <section class="container mx-auto max-w-[1140px] ">
@@ -739,8 +768,7 @@
     <!-- scrollreveal -->
     <script src="js/scrollreveal.min.js"></script>
     <!-- swiper -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
     <!-- script.js -->
     <script src="js/script.js"></script>

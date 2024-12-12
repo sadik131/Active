@@ -1,3 +1,22 @@
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileNav = document.getElementById('mobile-nav');
+        const closeNavbarButton = document.getElementById('close-navbar');
+
+        // When the website loads, the modal is visible (no hidden class)
+        mobileNav.classList.add('flex'); // Ensure flex is applied, just in case.
+
+        // Close the modal when clicking the "✕" button
+        closeNavbarButton.addEventListener('click', () => {
+            mobileNav.style.display = 'none'; // Hide the modal by setting display to none.
+        });
+    });
+
+
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
   // Make the first question active by default
   const firstQuestion = document.querySelectorAll('.question')[0];
@@ -27,27 +46,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// slider
-document.addEventListener("DOMContentLoaded", function () {
-  // Initialize Swiper
-  const swiper = new Swiper(".swiper-container", {
-    slidesPerView: 1,
-    loop: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
 
-  // List of links to activate
+document.addEventListener("DOMContentLoaded", function () {
   const links = [
     document.getElementById("link-1"),
     document.getElementById("link-2"),
@@ -55,42 +55,65 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("link-4"),
   ];
 
-  // Helper function to update active link
+  const text = document.getElementById("textSection")
+
+
   const updateActiveLink = (index) => {
     links.forEach((link, i) => {
-      const icon = link.querySelector("i"); // Get the icon inside the link
-      const iconContainer = link.querySelector("div"); // Get the icon container div
+      const icon = link.querySelector("i");
+      const iconContainer = link.querySelector("div");
+
+
       if (i === index) {
-        // Set the active state (Change background and icon color)
-        link.classList.add("bg-white"); // Add white background when active
-        link.classList.remove("bg-customMix"); // Remove inactive background
-        iconContainer.classList.add("bg-primary"); // Add primary background to the icon
-        iconContainer.classList.remove("bg-customMix"); // Remove default background
-        icon.classList.add("text-white"); // Make icon white when active
-        icon.classList.remove("text-primary"); // Remove primary text color
+        // Apply active styles
+        link.classList.add("bg-white");
+        link.classList.remove("bg-surface");
+        iconContainer.classList.add("bg-primary");
+        icon.classList.add("text-white");
+        icon.classList.remove("text-primary");
       } else {
-        // Set the inactive state (Revert background and icon color)
-        link.classList.remove("bg-white"); // Remove white background
-        link.classList.add("bg-customMix"); // Add default background
-        iconContainer.classList.remove("bg-primary"); // Remove primary background from icon
-        iconContainer.classList.add("bg-customMix"); // Restore default icon background
-        icon.classList.remove("text-white"); // Remove white icon color
-        icon.classList.add("text-primary"); // Restore primary text color for icon
+        // Apply inactive styles
+        link.classList.remove("bg-white");
+        link.classList.add("bg-surface");
+        iconContainer.classList.remove("bg-primary");
+        icon.classList.remove("text-white");
+        icon.classList.add("text-primary");
       }
     });
   };
 
-  // Update active link on slide change
-  swiper.on("slideChange", function () {
-    const activeIndex = swiper.realIndex; // Get the active slide index
-    updateActiveLink(activeIndex);
+  // Initialize Swiper
+  const swiper = new Swiper(".swiper-container", {
+    slidesPerView: 1,
+    loop: true,
+    autoplay: {
+      delay: 50000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    on: {
+      slideChange: function () {
+        const activeIndex = this.realIndex;
+        const textSection = document.getElementById("textSection");
+        console.log(activeIndex)
+
+        if (activeIndex === 0) {
+          textSection.classList.remove("hidden");
+        }
+        else {
+          textSection.classList.add("hidden");
+        }
+        updateActiveLink(activeIndex);
+      },
+    },
   });
 
-  // Initialize active state for the first slide
-  updateActiveLink(swiper.realIndex);
+  // Set initial state
+  updateActiveLink(0);
 });
-
-
 
 
 
@@ -175,11 +198,13 @@ sr.reveal(".right__service > div", {
   interval: 100,
   distance: "100px"
 })
+
 sr.reveal(".slider__link > div", {
   origin: "right",
   duration: "1000",
   interval: 200
 })
+
 sr.reveal(".plan__text", {
   duration: "1000",
 

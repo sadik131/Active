@@ -22,7 +22,6 @@ module.exports = {
         greenTransparent: 'rgba(52, 191, 73, 0.08)',
         heading: '#2d465e',    
         primary: '#34bf49',     
-        // accent: '#34bf49',     
         surface: '#F3F4F4',    
         contrast: '#ffffff',   
       },
