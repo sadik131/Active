@@ -20,7 +20,7 @@ module.exports = {
         customGrayMix: 'rgba(33, 37, 41, 0.75)',
         darkTransparent: 'rgba(33, 37, 41, 0.06)',
         greenTransparent: 'rgba(52, 191, 73, 0.08)',
-        heading: '#2d465e',    
+        heading: '#color-mix(in srgb, var(--heading-color), transparent 0%);',    
         primary: '#34bf49',     
         surface: '#F3F4F4',    
         contrast: '#ffffff',   
