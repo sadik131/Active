@@ -85,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Apply inactive styles
         link.classList.add("group");
         link.classList.remove("bg-white");
+        link.classList.add("hover:bg-[#EAEBEC]");
         link.classList.add("bg-surface");
         iconContainer.classList.remove("bg-primary");
         icon.classList.remove("text-white");
