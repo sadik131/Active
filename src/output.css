@@ -632,6 +632,18 @@ video {
   left: 50%;
 }
 
+.right-4 {
+  right: 1rem;
+}
+
+.top-9 {
+  top: 2.25rem;
+}
+
+.right-6 {
+  right: 1.5rem;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -692,6 +704,22 @@ video {
 
 .mt-\[85px\] {
   margin-top: 85px;
+}
+
+.mt-20 {
+  margin-top: 5rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-\[\] {
+  margin-top: ;
+}
+
+.mt-\[84px\] {
+  margin-top: 84px;
 }
 
 .block {
@@ -760,6 +788,22 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-8 {
+  width: 2rem;
+}
+
+.w-\[3\] {
+  width: 3;
+}
+
+.w-\[38pc\] {
+  width: 38pc;
+}
+
+.w-\[38px\] {
+  width: 38px;
 }
 
 .max-w-4xl {
@@ -940,6 +984,11 @@ video {
 
 .bg-\[\#212529cc\] {
   background-color: #212529cc;
+}
+
+.bg-\[\#EAEBEC\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 235 236 / var(--tw-bg-opacity, 1));
 }
 
 .bg-opacity-50 {
@@ -1195,6 +1244,11 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+
 .line-through {
   text-decoration-line: line-through;
 }
@@ -1250,14 +1304,65 @@ video {
   background-color: rgb(52 191 73 / var(--tw-bg-opacity, 1));
 }
 
+.hover\:bg-deafult:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(33 37 41 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-\[\]:hover {
+  background-color: ;
+}
+
+.hover\:bg-\[\#EAEBEC\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 235 236 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-\[\#\]:hover {
+  background-color: #;
+}
+
+.hover\:bg-\[\#EAEB\]:hover {
+  background-color: #EAEB;
+}
+
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+.hover\:text-black:hover {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-deafult:hover {
+  --tw-text-opacity: 1;
+  color: rgb(33 37 41 / var(--tw-text-opacity, 1));
+}
+
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.group:hover .group-hover\:bg-\[\] {
+  background-color: ;
+}
+
+.group:hover .group-hover\:bg-\[\#EAEBEC\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 235 236 / var(--tw-bg-opacity, 1));
+}
+
+.group:hover .group-hover\:bg-\[\#D5D7D8\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(213 215 216 / var(--tw-bg-opacity, 1));
+}
+
+.group:hover .group-hover\:text-deafult {
+  --tw-text-opacity: 1;
+  color: rgb(33 37 41 / var(--tw-text-opacity, 1));
 }
 
 @media (min-width: 768px) {

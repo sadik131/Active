@@ -18,13 +18,13 @@
 
 <body>
     <!-- navbar -->
-    <nav class="sticky max-w-[1140px] container mx-auto top-0 left-0 w-full bg-white px-3 py-5 z-50">
+    <nav class="fixed container mx-auto top-0 left-0 w-full bg-white px-3 py-5 z-50">
         <div class="container max-w-[1140px] mx-auto flex items-center justify-between">
             <!-- Logo -->
             <h1 class="text-[30px] text-heading font-light">Active.</h1>
 
             <!-- Hamburger Button -->
-            <button id="navbar-toggle" class="block lg:hidden text-default text-2xl focus:outline-none">
+            <button id="navbar-toggle" class="block lg:hidden w-[38px] text-default text-2xl focus:outline-none">
                 ☰
             </button>
 
@@ -41,9 +41,9 @@
             </ul>
 
             <!-- Mobile Modal Navbar -->
-            <div id="mobile-nav" class="fixed inset-0 bg-[#212529cc] flex hidden items-center justify-center z-50">
+            <div id="mobile-nav" class="fixed inset-0 bg-[#212529cc] hidden flex items-center justify-center z-50">
                 <div class="bg-white w-[90%] max-w-[400px] p-5 rounded-lg">
-                    <button id="close-navbar" class="text-primary text-xl mb-5 focus:outline-none">
+                    <button id="close-navbar" class="absolute right-6 top-9 text-primary text-xl mb-5 focus:outline-none">
                         ✕
                     </button>
                     <ul class="flex flex-col space-y-4 font-normal text-default font-Lato">
@@ -58,8 +58,6 @@
                     </ul>
                 </div>
             </div>
-
-
         </div>
     </nav>
 
@@ -68,7 +66,7 @@
 
     <main class="font-roboto bg-white">
         <!-- hero section -->
-        <section class="bg-white ">
+        <section class="bg-white mt-[84px]">
             <div class="px-3 container max-w-[1140px]  mx-auto py-[60px]">
                 <div class="hero__section flex flex-col-reverse lg:flex-row  justify-between items-center">
                     <!-- left side -->
@@ -340,9 +338,9 @@
                 <!-- Left Section -->
                 <div class="slider__link overflow-x-hidden lg:w-1/3">
                     <!-- Link 1 -->
-                    <div id="link-1" class="flex p-5 mb-[10px] gap-5 bg-white rounded-lg">
-                        <div class="h-10 w-14 bg-primary flex items-center justify-center rounded-md">
-                            <i class="fa-solid text-white text-xl fa-bag-shopping"></i>
+                    <div id="link-1" class="group flex p-5 mb-[10px] gap-5 hover:bg-[#EAEBEC] cursor-pointer bg-white rounded-lg">
+                        <div class="h-10 w-14 group-hover:bg-[#D5D7D8] bg-customMix flex items-center justify-center rounded-md">
+                            <i class="fa-solid group-hover:text-deafult text-white text-xl fa-magnifying-glass"></i>
                         </div>
                         <div>
                             <h1 class="text-base text-heading font-medium">Modern and Clean Design</h1>
@@ -352,9 +350,9 @@
                         </div>
                     </div>
                     <!-- Link 2 -->
-                    <div id="link-2" class="flex p-5 mb-[10px] gap-5 rounded-lg">
-                        <div class="h-10 w-14 bg-customMix flex items-center justify-center rounded-md">
-                            <i class="fa-solid text-primary text-xl fa-bag-shopping"></i>
+                    <div id="link-2" class="group flex p-5 mb-[10px] gap-5 hover:bg-[#EAEBEC] cursor-pointer rounded-lg">
+                        <div class="h-10 w-14 group-hover:bg-[#D5D7D8] bg-customMix flex items-center justify-center rounded-md">
+                            <i class="fa-solid group-hover:text-deafult text-primary text-xl fa-bag-shopping"></i>
                         </div>
                         <div>
                             <h1 class="text-base text-heading font-medium">Sell Products</h1>
@@ -363,11 +361,10 @@
                             </p>
                         </div>
                     </div>
-
                     <!-- Link 3 -->
-                    <div id="link-3" class="flex p-5 mb-[10px] gap-5 rounded-lg">
-                        <div class="h-10 w-14 bg-customMix flex items-center justify-center rounded-md">
-                            <i class="fa-solid text-primary text-xl fa-bag-shopping"></i>
+                    <div id="link-3" class="group flex p-5 mb-[10px] gap-5 hover:bg-[#EAEBEC] cursor-pointer rounded-lg">
+                        <div class="h-10 w-14 group-hover:bg-[#D5D7D8] bg-customMix flex items-center justify-center rounded-md">
+                            <i class="fa-solid group-hover:text-deafult text-primary text-xl fa-bag-shopping"></i>
                         </div>
                         <div>
                             <h1 class="text-base text-heading font-medium">Success Every Day</h1>
@@ -378,9 +375,9 @@
                     </div>
 
                     <!-- Link 4 -->
-                    <div id="link-4" class="flex p-5 mb-[10px] gap-5 rounded-lg">
-                        <div class="h-10 w-14 bg-customMix flex items-center justify-center rounded-md">
-                            <i class="fa-solid text-primary text-xl fa-bag-shopping"></i>
+                    <div id="link-4" class="group flex p-5 mb-[10px] gap-5 hover:bg-[#EAEBEC] cursor-pointer rounded-lg">
+                        <div class="h-10 w-14 group-hover:bg-[#D5D7D8] bg-customMix flex items-center justify-center rounded-md">
+                            <i class="fa-solid group-hover:text-deafult text-primary text-xl fa-bag-shopping"></i>
                         </div>
                         <div>
                             <h1 class="text-base text-heading font-medium">Bring Ideas to Life</h1>

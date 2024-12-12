@@ -1,19 +1,26 @@
-    document.addEventListener('DOMContentLoaded', () => {
-        const mobileNav = document.getElementById('mobile-nav');
-        const closeNavbarButton = document.getElementById('close-navbar');
+const toggleButton = document.getElementById('navbar-toggle');
+const mobileNav = document.getElementById('mobile-nav');
+const closeButton = document.getElementById('close-navbar');
 
-        // When the website loads, the modal is visible (no hidden class)
-        mobileNav.classList.add('flex'); // Ensure flex is applied, just in case.
+// Open the mobile nav
+toggleButton.addEventListener('click', () => {
+    mobileNav.classList.remove('hidden'); // Show the mobile nav
+    toggleButton.classList.add('hidden'); // Hide the hamburger button
+});
 
-        // Close the modal when clicking the "✕" button
-        closeNavbarButton.addEventListener('click', () => {
-            mobileNav.style.display = 'none'; // Hide the modal by setting display to none.
-        });
-    });
+// Close the mobile nav
+closeButton.addEventListener('click', () => {
+    mobileNav.classList.add('hidden'); // Hide the mobile nav
+    toggleButton.classList.remove('hidden'); // Show the hamburger button
+});
 
-
-
-
+// Close the mobile nav when clicking outside the menu
+mobileNav.addEventListener('click', (event) => {
+    if (event.target === mobileNav) {
+        mobileNav.classList.add('hidden'); // Hide the mobile nav
+        toggleButton.classList.remove('hidden'); // Show the hamburger button
+    }
+});
 
 
 
@@ -66,13 +73,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (i === index) {
         // Apply active styles
+        link.classList.remove("group");
+        link.classList.remove("hover:bg-[#EAEBEC]");
         link.classList.add("bg-white");
         link.classList.remove("bg-surface");
         iconContainer.classList.add("bg-primary");
         icon.classList.add("text-white");
         icon.classList.remove("text-primary");
+        console.log(link)
       } else {
         // Apply inactive styles
+        link.classList.add("group");
         link.classList.remove("bg-white");
         link.classList.add("bg-surface");
         iconContainer.classList.remove("bg-primary");
@@ -98,7 +109,6 @@ document.addEventListener("DOMContentLoaded", function () {
       slideChange: function () {
         const activeIndex = this.realIndex;
         const textSection = document.getElementById("textSection");
-        console.log(activeIndex)
 
         if (activeIndex === 0) {
           textSection.classList.remove("hidden");
@@ -114,7 +124,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Set initial state
   updateActiveLink(0);
 });
-
 
 
 // Function to animate the counter
@@ -198,13 +207,11 @@ sr.reveal(".right__service > div", {
   interval: 100,
   distance: "100px"
 })
-
 sr.reveal(".slider__link > div", {
   origin: "right",
   duration: "1000",
   interval: 200
 })
-
 sr.reveal(".plan__text", {
   duration: "1000",
 
