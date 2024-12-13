@@ -25,9 +25,29 @@ mobileNav.addEventListener('click', (event) => {
 
 function toggleDropdown(event, dropdownId) {
   event.preventDefault();
+
+  // Get the dropdown menu and toggle visibility
   const dropdownMenu = document.getElementById(dropdownId);
   dropdownMenu.classList.toggle('hidden');
+
+  // Find the <span> element within the clicked <a> tag
+  const spanElement = event.target.querySelector('span') || event.target.closest('a').querySelector('span');
+
+  if (spanElement) {
+    // Toggle the required classes for the <span>
+    if (dropdownMenu.classList.contains('hidden')) {
+      // Reset to original state
+      spanElement.classList.remove('bg-primary', 'text-white','rotate-180');
+      spanElement.classList.add('bg-[#EAF8EC]');
+    } else {
+      // Apply active state
+      spanElement.classList.add('bg-primary', 'text-white','rotate-180');
+      console.log(spanElement)
+      spanElement.classList.remove('bg-[#EAF8EC]');
+    }
+  }
 }
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -86,7 +106,6 @@ document.addEventListener("DOMContentLoaded", function () {
         iconContainer.classList.add("bg-primary");
         icon.classList.add("text-white");
         icon.classList.remove("text-primary");
-        console.log(link)
       } else {
         // Apply inactive styles
         link.classList.add("group");

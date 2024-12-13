@@ -632,10 +632,6 @@ video {
   top: 1.25rem;
 }
 
-.top-9 {
-  top: 2.25rem;
-}
-
 .top-\[18px\] {
   top: 18px;
 }
@@ -652,6 +648,11 @@ video {
   z-index: 50;
 }
 
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -665,11 +666,6 @@ video {
 .my-\[15px\] {
   margin-top: 15px;
   margin-bottom: 15px;
-}
-
-.mx-5 {
-  margin-left: 1.25rem;
-  margin-right: 1.25rem;
 }
 
 .mb-12 {
@@ -706,6 +702,10 @@ video {
 
 .ml-2 {
   margin-left: 0.5rem;
+}
+
+.mt-0 {
+  margin-top: 0px;
 }
 
 .mt-12 {
@@ -766,14 +766,6 @@ video {
 
 .h-\[70px\] {
   height: 70px;
-}
-
-.max-h-\[150px\] {
-  max-height: 150px;
-}
-
-.max-h-\[200px\] {
-  max-height: 200px;
 }
 
 .max-h-\[70vh\] {
@@ -957,6 +949,10 @@ video {
   border-color: rgb(52 191 73 / var(--tw-border-opacity, 1));
 }
 
+.bg-\[\#21252908\] {
+  background-color: #21252908;
+}
+
 .bg-\[\#212529cc\] {
   background-color: #212529cc;
 }
@@ -964,6 +960,11 @@ video {
 .bg-\[\#DDDFDF\] {
   --tw-bg-opacity: 1;
   background-color: rgb(221 223 223 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[\#EAF8EC\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 248 236 / var(--tw-bg-opacity, 1));
 }
 
 .bg-customMix {
@@ -1002,15 +1003,6 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
-.bg-\[\#EAF8EC\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(234 248 236 / var(--tw-bg-opacity, 1));
-}
-
-.bg-\[\#21252908\] {
-  background-color: #21252908;
-}
-
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1027,11 +1019,6 @@ video {
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
-}
-
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
 }
 
 .px-3 {
@@ -1067,11 +1054,6 @@ video {
 .px-\[30px\] {
   padding-left: 30px;
   padding-right: 30px;
-}
-
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
 }
 
 .py-10 {
@@ -1122,11 +1104,6 @@ video {
 .py-\[6px\] {
   padding-top: 6px;
   padding-bottom: 6px;
-}
-
-.py-\[10\] {
-  padding-top: 10;
-  padding-bottom: 10;
 }
 
 .pb-2 {
@@ -1495,3 +1472,5 @@ video {
     padding-right: 1rem;
   }
 }
+
+  

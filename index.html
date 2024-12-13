@@ -39,10 +39,10 @@
 
                 <!-- Dropdown -->
                 <li class="relative group">
-                    <a href="#" class="hover:text-primary py-[18px] px-[15px] text-base">Dropdown
+                    <a href="#" class="hover:text-primary  py-[18px] px-[15px] text-base">Dropdown
                         <i class="fa-solid fa-angle-down"></i>
                     </a>
-                    <ul class="absolute left-3  w-48 py-2 mt-2 bg-white shadow-md group-hover:flex flex-col hover:flex">
+                    <ul class="hidden absolute left-3  w-48 py-2 mt-2 bg-white shadow-md group-hover:flex flex-col hover:flex">
                         <li><a href="#" class="hover:text-primary block px-5 py-[10px] text-sm">Dropdown 1</a></li>
 
                         <!-- Deep Dropdown -->
@@ -86,18 +86,17 @@
                         <li><a class="text-base" href="">Team</a></li>
                         <li><a class="text-base" href="">Blog</a></li>
                         <li class="relative">
-                            <a href="#" 
-                            class="text-base flex items-center justify-between cursor-pointer"
-                            onclick="toggleDropdown(event, 'dropdownMenu')">
-                            Dropdown
-                            <span 
-                                class="bg-[#EAF8EC] hover:bg-primary hover:text-white h-[30px] text-xs w-[30px] rounded-full flex items-center justify-center transition-transform duration-300">
-                                <i class="fa-solid fa-angle-down"></i>
-                            </span>
-                         </a>
+                            <a href="#" class="text-base flex items-center justify-between cursor-pointer"
+                                onclick="toggleDropdown(event, 'dropdownMenu')">
+                                Dropdown
+                                <span
+                                    class="bg-[#EAF8EC] hover:bg-primary hover:text-white h-[30px] text-xs w-[30px] rounded-full flex items-center justify-center transition-transform duration-300">
+                                    <i class="fa-solid fa-angle-down"></i>
+                                </span>
+                            </a>
+
                             <!-- Dropdown Menu -->
-                            <ul id="dropdownMenu"
-                                class="hidden border bg-[#21252908] rounded my-[10px] py-[10px] ">
+                            <ul id="dropdownMenu" class="hidden border bg-[#21252908] rounded my-[10px] py-[10px] ">
                                 <li><a href="#" class="block py-[10px] px-5 text-black">Dropdown 1</a></li>
                                 <li><a href="#" class="block py-[10px] px-5 text-black">Dropdown 2</a></li>
                                 <!-- Deep Dropdown -->
@@ -111,6 +110,7 @@
                                             <i class="fa-solid fa-angle-down"></i>
                                         </span>
                                     </a>
+
                                     <ul id="deepDropdownMenu"
                                         class="hidden border mx-5 my-[10px] bg-[#21252908] rounded mt-2 py-2 left-full top-0 ">
                                         <li><a href="#" class="block py-[10px] px-5 text-black">Deep Dropdown 1</a></li>
