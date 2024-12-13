@@ -18,7 +18,7 @@
 
 <body>
     <!-- navbar -->
-    <nav class="fixed container mx-auto top-0 left-0 w-full bg-white px-3 py-5 z-50">
+    <nav class="fixed top-0 left-0 w-full bg-white px-3 py-5 z-50">
         <div class="container max-w-[1140px] mx-auto flex items-center justify-between">
             <!-- Logo -->
             <h1 class="text-[30px] text-heading font-light">Active.</h1>
@@ -30,35 +30,103 @@
 
             <!-- Desktop Navbar -->
             <ul class="hidden lg:flex items-center justify-center font-normal text-default font-Lato">
-                <li><a class="py-[16px] px-[15px] text-base text-primary" href="">Home</a></li>
-                <li><a class="py-[16px] px-[15px] text-base" href="">About</a></li>
-                <li><a class="py-[16px] px-[15px] text-base" href="">Services</a></li>
-                <li><a class="py-[16px] px-[15px] text-base" href="">Portfolio</a></li>
-                <li><a class="py-[16px] px-[15px] text-base" href="">Team</a></li>
-                <li><a class="py-[16px] px-[15px] text-base" href="">Blog</a></li>
-                <li><a class="py-[16px] px-[15px] text-base" href="">Dropdown</a></li>
-                <li><a class="py-[16px] px-[15px] text-base" href="">Contact</a></li>
+                <li><a href="#" class="hover:text-primary py-4 px-6 text-base text-primary">Home</a></li>
+                <li><a href="#" class="hover:text-primary py-4 px-6 text-base">About</a></li>
+                <li><a href="#" class="hover:text-primary py-4 px-6 text-base">Services</a></li>
+                <li><a href="#" class="hover:text-primary py-4 px-6 text-base">Portfolio</a></li>
+                <li><a href="#" class="hover:text-primary py-4 px-6 text-base">Team</a></li>
+                <li><a href="#" class="hover:text-primary py-4 px-6 text-base">Blog</a></li>
+
+                <!-- Dropdown -->
+                <li class="relative group">
+                    <a href="#" class="hover:text-primary py-[18px] px-[15px] text-base">Dropdown
+                        <i class="fa-solid fa-angle-down"></i>
+                    </a>
+                    <ul class="absolute left-3  w-48 py-2 mt-2 bg-white shadow-md group-hover:flex flex-col hover:flex">
+                        <li><a href="#" class="hover:text-primary block px-5 py-[10px] text-sm">Dropdown 1</a></li>
+
+                        <!-- Deep Dropdown -->
+                        <li class="relative">
+                            <a href="#" class="peer hover:text-primary block py-[10px]  px-5 text-sm">Deep Dropdown
+                                <i class="fa-solid fa-angle-down"></i>
+                            </a>
+                            <ul
+                                class="absolute hidden bg-white -left-full top-0 w-48 py-2 mt-2 z-10 shadow-md peer-hover:block flex-col">
+                                <li><a href="#" class="hover:text-primary block py-[10px] px-5 text-sm">Deep Link 1</a>
+                                </li>
+                                <li><a href="#" class="hover:text-primary block py-[10px] px-5 text-sm">Deep Link 2</a>
+                                </li>
+                                <li><a href="#" class="hover:text-primary block py-[10px] px-5 text-sm">Deep Link 3</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#" class="hover:text-primary block py-[10px] px-5 text-sm">Dropdown 2</a></li>
+                        <li><a href="#" class="hover:text-primary block py-[10px] px-5 text-sm">Dropdown 3</a></li>
+                        <li><a href="#" class="hover:text-primary block py-[10px] px-5 text-sm">Dropdown 4</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#" class="hover:text-primary py-4 px-6 text-base">Contact</a></li>
             </ul>
+
 
             <!-- Mobile Modal Navbar -->
             <div id="mobile-nav" class="fixed inset-0 bg-[#212529cc] hidden flex items-center justify-center z-50">
-                <div class="bg-white w-[90%] max-w-[400px] p-5 rounded-lg">
+                <div class="bg-white w-[90%] max-w-[400px] overflow-y-auto p-5 rounded-lg">
                     <button id="close-navbar"
-                        class="absolute right-6 top-9 text-primary text-xl mb-5 focus:outline-none">
+                        class="absolute right-6 top-5 text-primary text-xl mb-5 focus:outline-none">
                         ✕
                     </button>
-                    <ul class="flex flex-col space-y-4 font-normal text-default font-Lato">
+                    <ul class="flex flex-col space-y-4 font-normal text-default font-Lato max-h-[70vh] ">
                         <li><a class="text-base text-primary" href="">Home</a></li>
                         <li><a class="text-base" href="">About</a></li>
                         <li><a class="text-base" href="">Services</a></li>
                         <li><a class="text-base" href="">Portfolio</a></li>
                         <li><a class="text-base" href="">Team</a></li>
                         <li><a class="text-base" href="">Blog</a></li>
-                        <li><a class="text-base" href="">Dropdown</a></li>
+                        <li class="relative">
+                            <a href="#" 
+                            class="text-base flex items-center justify-between cursor-pointer"
+                            onclick="toggleDropdown(event, 'dropdownMenu')">
+                            Dropdown
+                            <span 
+                                class="bg-[#EAF8EC] hover:bg-primary hover:text-white h-[30px] text-xs w-[30px] rounded-full flex items-center justify-center transition-transform duration-300">
+                                <i class="fa-solid fa-angle-down"></i>
+                            </span>
+                         </a>
+                            <!-- Dropdown Menu -->
+                            <ul id="dropdownMenu"
+                                class="hidden border bg-[#21252908] rounded my-[10px] py-[10px] ">
+                                <li><a href="#" class="block py-[10px] px-5 text-black">Dropdown 1</a></li>
+                                <li><a href="#" class="block py-[10px] px-5 text-black">Dropdown 2</a></li>
+                                <!-- Deep Dropdown -->
+                                <li class="relative">
+                                    <a href="#"
+                                        class="block py-[10px] px-5 text-black flex items-center justify-between cursor-pointer"
+                                        onclick="toggleDropdown(event, 'deepDropdownMenu')">
+                                        Deep Dropdown
+                                        <span
+                                            class="bg-[#EAF8EC] hover:bg-primary hover:text-white h-[30px] text-xs w-[30px] rounded-full flex items-center justify-center">
+                                            <i class="fa-solid fa-angle-down"></i>
+                                        </span>
+                                    </a>
+                                    <ul id="deepDropdownMenu"
+                                        class="hidden border mx-5 my-[10px] bg-[#21252908] rounded mt-2 py-2 left-full top-0 ">
+                                        <li><a href="#" class="block py-[10px] px-5 text-black">Deep Dropdown 1</a></li>
+                                        <li><a href="#" class="block py-[10px] px-5 text-black">Deep Dropdown 2</a></li>
+                                        <li><a href="#" class="block py-[10px] px-5 text-black">Deep Dropdown 3</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" class="block py-[10px] px-5 text-black">Dropdown 3</a></li>
+                                <li><a href="#" class="block py-[10px] px-5 text-black">Dropdown 4</a></li>
+                            </ul>
+                        </li>
                         <li><a class="text-base" href="">Contact</a></li>
                     </ul>
                 </div>
             </div>
+
         </div>
     </nav>
 

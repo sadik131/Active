@@ -9,3 +9,7 @@
 .swiper-pagination.test.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
     bottom: -6px;
 }
+
+.bg-mix-custom {
+    background-color: color-mix(in srgb, #34bf49, transparent 90%);
+  }

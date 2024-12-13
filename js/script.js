@@ -23,6 +23,12 @@ mobileNav.addEventListener('click', (event) => {
 });
 
 
+function toggleDropdown(event, dropdownId) {
+  event.preventDefault();
+  const dropdownMenu = document.getElementById(dropdownId);
+  dropdownMenu.classList.toggle('hidden');
+}
+
 
 document.addEventListener("DOMContentLoaded", function () {
   // Make the first question active by default
