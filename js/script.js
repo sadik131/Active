@@ -80,6 +80,103 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// document.addEventListener("DOMContentLoaded", function () {
+//   const links = [
+//     document.getElementById("link-1"),
+//     document.getElementById("link-2"),
+//     document.getElementById("link-3"),
+//     document.getElementById("link-4"),
+//   ];
+
+//   console.log(links)
+
+//   const text = document.getElementById("textSection");
+
+  // const updateActiveLink = (index) => {
+  //   links.forEach((link, i) => {
+  //     const icon = link.querySelector("i");
+  //     const iconContainer = link.querySelector("div");
+
+  //     if (i === index) {
+  //       // Apply active styles
+  //       link.classList.remove("group");
+  //       link.classList.remove("hover:bg-[#EAEBEC]");
+  //       link.classList.add("bg-white");
+  //       link.classList.remove("bg-surface");
+  //       iconContainer.classList.add("bg-primary");
+  //       icon.classList.add("text-white");
+  //       icon.classList.remove("text-primary");
+  //     } else {
+  //       // Apply inactive styles
+  //       link.classList.add("group");
+  //       link.classList.remove("bg-white");
+  //       link.classList.add("hover:bg-[#EAEBEC]");
+  //       link.classList.add("bg-surface");
+  //       iconContainer.classList.remove("bg-primary");
+  //       icon.classList.remove("text-white");
+  //       icon.classList.add("text-primary");
+  //     }
+  //   });
+  // };
+
+//   // Initialize Swiper
+//   const swiper = new Swiper(".swiper-container", {
+//     slidesPerView: 1,
+//     loop: true,
+//     autoplay: {
+//       delay: 5000,
+//       disableOnInteraction: false,
+//     },
+//     pagination: {
+//       el: ".swiper-pagination",
+//       clickable: true,
+//     },
+//     on: {
+//       slideChange: function () {
+//         const activeIndex = this.realIndex;
+//         const textSection = document.getElementById("textSection");
+
+//         if (activeIndex === 0) {
+//           textSection.classList.remove("hidden");
+//         } else {
+//           textSection.classList.add("hidden");
+//         }
+//         updateActiveLink(activeIndex);
+//       },
+//     },
+//   });
+
+//   // Pause autoplay initially
+//   swiper.autoplay.stop();
+
+//   // Intersection Observer to detect visibility
+//   const observer = new IntersectionObserver(
+//     (entries) => {
+//       entries.forEach((entry) => {
+//         if (entry.isIntersecting) {
+//           swiper.autoplay.start(); // Start autoplay when in viewport
+//         } else {
+//           swiper.autoplay.stop(); // Stop autoplay when out of viewport
+//         }
+//       });
+//     },
+//     { threshold: 0.5 } // Adjust threshold as needed (0.5 means half the element must be visible)
+//   );
+
+//   // Observe the swiper container
+//   const swiperContainer = document.querySelector(".swiper-container");
+//   observer.observe(swiperContainer);
+
+//   // Set initial state
+//   updateActiveLink(0);
+// });
+
+
+
+// Function to animate the counter
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const links = [
     document.getElementById("link-1"),
@@ -88,71 +185,87 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("link-4"),
   ];
 
-  const text = document.getElementById("textSection")
-
-
   const updateActiveLink = (index) => {
     links.forEach((link, i) => {
       const icon = link.querySelector("i");
       const iconContainer = link.querySelector("div");
 
-
       if (i === index) {
-        // Apply active styles
-        link.classList.remove("group");
-        link.classList.remove("hover:bg-[#EAEBEC]");
+        console.log(index)
+        link.classList.remove("group", "hover:bg-[#EAEBEC]", "bg-surface");
         link.classList.add("bg-white");
-        link.classList.remove("bg-surface");
-        iconContainer.classList.add("bg-primary");
-        icon.classList.add("text-white");
-        icon.classList.remove("text-primary");
+        iconContainer?.classList.add("bg-primary");
+        icon?.classList.add("text-white");
+        icon?.classList.remove("text-primary");
       } else {
-        // Apply inactive styles
-        link.classList.add("group");
+        link.classList.add("group", "hover:bg-[#EAEBEC]", "bg-surface");
         link.classList.remove("bg-white");
-        link.classList.add("hover:bg-[#EAEBEC]");
-        link.classList.add("bg-surface");
-        iconContainer.classList.remove("bg-primary");
-        icon.classList.remove("text-white");
-        icon.classList.add("text-primary");
+        iconContainer?.classList.remove("bg-primary");
+        icon?.classList.remove("text-white");
+        icon?.classList.add("text-primary");
       }
     });
   };
 
-  // Initialize Swiper
-  const swiper = new Swiper(".swiper-container", {
-    slidesPerView: 1,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    on: {
-      slideChange: function () {
-        const activeIndex = this.realIndex;
-        const textSection = document.getElementById("textSection");
-
-        if (activeIndex === 0) {
-          textSection.classList.remove("hidden");
-        }
-        else {
-          textSection.classList.add("hidden");
-        }
-        updateActiveLink(activeIndex);
+  const initializeSwiper = (container) => {
+    return new Swiper(container, {
+      slidesPerView: 1,
+      loop: true,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
       },
+      pagination: {
+        el: container.querySelector(".swiper-pagination"),
+        clickable: true,
+      },
+      on: {
+        slideChange: function () {
+          const activeIndex = this.realIndex;
+          const textSection = container.querySelector("#textSection");
+          textSection?.classList.toggle("hidden", activeIndex !== 0);
+          updateActiveLink(activeIndex);
+        },
+      },
+    });
+  };
+
+  const activeSwipers = new Map();
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const container = entry.target;
+        if (entry.isIntersecting) {
+          if (!activeSwipers.has(container)) {
+            const swiperInstance = initializeSwiper(container);
+            activeSwipers.set(container, swiperInstance);
+          } else {
+            activeSwipers.get(container).autoplay.start();
+          }
+        } else {
+          activeSwipers.get(container)?.autoplay.stop();
+        }
+      });
     },
+    {
+      root: null,
+      threshold: 0.5,
+    }
+  );
+
+  const swiperContainers = document.querySelectorAll(".swiper-container");
+  swiperContainers.forEach((container) => {
+    observer.observe(container);
   });
 
-  // Set initial state
-  updateActiveLink(0);
+  updateActiveLink(0); // Initialize the first link as active
 });
 
 
-// Function to animate the counter
+
+
+
 const animateCounter = (element, target) => {
   let count = 0;
   const duration = 1000;
